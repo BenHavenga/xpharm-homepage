@@ -1,5 +1,7 @@
 import { Inter, Playfair_Display } from "next/font/google";
 import Image from "next/image";
+import { SectionNav } from "./components/section-nav";
+import { ContactForm } from "./components/contact-form";
 
 const inter = Inter({ subsets: ["latin"] });
 const playfair = Playfair_Display({ subsets: ["latin"] });
@@ -8,7 +10,7 @@ export default function HomePage() {
   return (
     <div className={`flex min-h-screen flex-col ${inter.className}`}>
       {/* Header */}
-      <header className="w-full px-6 py-6 md:px-12 lg:px-20">
+      <header className="sticky top-0 z-50 w-full bg-background px-6 py-6 md:px-12 lg:px-20">
         <div className="mx-auto max-w-7xl">
           <Image
             src="/images/Logo1.png"
@@ -20,46 +22,313 @@ export default function HomePage() {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <main className="flex flex-1 items-center justify-center px-6 py-12 md:px-12 lg:px-20">
-        <div className="mx-auto max-w-4xl text-center">
-          {/* Coming Soon Badge */}
-          <div className="bg-accent/30 text-primary mb-8 inline-flex items-center gap-2 rounded-full px-4 py-2">
-            <span className="relative flex h-2 w-2">
-              <span className="bg-accent absolute inline-flex h-full w-full animate-ping rounded-full opacity-75"></span>
-              <span className="bg-accent relative inline-flex h-2 w-2 rounded-full"></span>
-            </span>
-            <span className="text-sm font-medium">Website Coming Soon</span>
+      <SectionNav />
+
+      <main className="flex-1">
+        {/* Hero Section */}
+        <section 
+          className="relative px-6 py-16 md:px-12 lg:px-20 lg:py-24 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('/images/background image.png')",
+          }}
+        >
+          <div className="absolute inset-0 bg-background/80"></div>
+          <div className="relative mx-auto max-w-4xl text-center">
+            <h1
+              className={`text-primary mb-4 text-4xl font-bold text-balance md:text-5xl lg:text-6xl ${playfair.className}`}
+            >
+              Fractional & Interim Operations Leadership for Life Sciences
+            </h1>
+            <p className="text-muted-foreground mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-pretty md:text-xl">
+              Driving operational and value‑creation milestones at critical inflection points
+            </p>
           </div>
+        </section>
 
-          {/* Logo Display */}
-          <div className="mb-8 flex justify-center">
-            <Image
-              src="/images/Logo2.png"
-              alt="XPharm logo"
-              width={160}
-              height={160}
-              className="h-28 w-auto md:h-36"
-            />
+        {/* What We Do Section */}
+        <section id="what-we-do" className="border-border border-t bg-muted/30 px-6 py-16 md:px-12 lg:px-20 lg:py-24">
+          <div className="mx-auto max-w-4xl">
+            <h2
+              className={`text-primary mb-6 text-3xl font-bold md:text-4xl lg:text-5xl ${playfair.className}`}
+            >
+              What We Do
+            </h2>
+            <div className="text-muted-foreground space-y-4 text-base leading-relaxed md:text-lg">
+              <p>
+                XPharm provides fractional and interim operations leadership to life sciences companies navigating complex transitions and execution risk. We work directly with boards, investors, and executive leadership teams when operational delivery is critical to enterprise value.
+              </p>
+              <p>
+                Our engagements are designed for situations where experience, authority, and speed matter more than advisory analysis.
+              </p>
+            </div>
           </div>
+        </section>
 
-          {/* Main Heading */}
-          <h1
-            className={`text-primary mb-6 text-4xl font-bold text-balance md:text-5xl lg:text-6xl ${playfair.className}`}
-          >
-            Pharmaceutical Consultancy
-          </h1>
-          <h2
-            className={`text-primary mb-6 text-2xl font-semibold text-balance md:text-3xl lg:text-4xl ${playfair.className}`}
-          >
-            Solving challenges you didn&apos;t even know you had.
-          </h2>
+        {/* When to Engage XPharm Section */}
+        <section id="when-to-engage" className="border-border border-t px-6 py-16 md:px-12 lg:px-20 lg:py-24">
+          <div className="mx-auto max-w-4xl">
+            <h2
+              className={`text-primary mb-6 text-3xl font-bold md:text-4xl lg:text-5xl ${playfair.className}`}
+            >
+              When to Engage XPharm
+            </h2>
+            <p className="text-muted-foreground mb-8 text-base leading-relaxed md:text-lg">
+              Clients typically engage XPharm when operational complexity, time pressure, or risk exposure exceeds internal capacity. Common engagement triggers include:
+            </p>
+            <ul className="text-muted-foreground space-y-4 text-base leading-relaxed md:text-lg">
+              <li className="flex gap-3">
+                <span className="text-accent mt-1 shrink-0">•</span>
+                <span>Scaling global supply chains to support clinical progression or commercial readiness</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-accent mt-1 shrink-0">•</span>
+                <span>Operational instability following acquisition, divestment, or organisational restructuring</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-accent mt-1 shrink-0">•</span>
+                <span>Supplier risk, cost escalation, or failure of critical third‑party partners</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-accent mt-1 shrink-0">•</span>
+                <span>Trade, logistics, or regulatory exposure across multi‑jurisdictional operations</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-accent mt-1 shrink-0">•</span>
+                <span>Pre‑transaction or confirmatory operational due diligence</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-accent mt-1 shrink-0">•</span>
+                <span>Interim leadership gaps at COO or senior operations level</span>
+              </li>
+            </ul>
+          </div>
+        </section>
 
-          {/* Subheading */}
-          <p className="text-muted-foreground mx-auto mb-12 max-w-2xl text-lg leading-relaxed text-pretty md:text-xl">
-            Our new website is currently under development.
-          </p>
-        </div>
+        {/* How We Engage Section */}
+        <section id="how-we-engage" className="border-border border-t bg-muted/30 px-6 py-16 md:px-12 lg:px-20 lg:py-24">
+          <div className="mx-auto max-w-4xl">
+            <h2
+              className={`text-primary mb-6 text-3xl font-bold md:text-4xl lg:text-5xl ${playfair.className}`}
+            >
+              How We Engage
+            </h2>
+            <p className="text-muted-foreground mb-8 text-base leading-relaxed md:text-lg">
+              XPharm operates exclusively in leadership roles, not as a traditional consultancy.
+            </p>
+            <p className="text-primary mb-6 font-semibold md:text-lg">
+              Engagement models include:
+            </p>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-primary mb-2 text-xl font-semibold">
+                  Fractional COO / Operations Leader
+                </h3>
+                <p className="text-muted-foreground text-base leading-relaxed md:text-lg">
+                  Ongoing executive leadership (typically 1–2 days per week) focused on stabilisation, scale‑up, and delivery of defined milestones.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-primary mb-2 text-xl font-semibold">
+                  Interim COO / SVP Operations
+                </h3>
+                <p className="text-muted-foreground text-base leading-relaxed md:text-lg">
+                  Full‑time, fixed‑term executive mandates where immediate authority and accountability are required.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-primary mb-2 text-xl font-semibold">
+                  Board & Investor Operational Support
+                </h3>
+                <p className="text-muted-foreground text-base leading-relaxed md:text-lg">
+                  Targeted engagement during transactions, restructurings, or periods of heightened execution risk.
+                </p>
+              </div>
+            </div>
+            <p className="text-muted-foreground mt-8 text-base leading-relaxed md:text-lg">
+              XPharm does not provide project management, staff augmentation, or functional consulting services.
+            </p>
+          </div>
+        </section>
+
+        {/* Areas of Operational Accountability Section */}
+        <section id="areas" className="border-border border-t px-6 py-16 md:px-12 lg:px-20 lg:py-24">
+          <div className="mx-auto max-w-4xl">
+            <h2
+              className={`text-primary mb-6 text-3xl font-bold md:text-4xl lg:text-5xl ${playfair.className}`}
+            >
+              Areas of Operational Accountability
+            </h2>
+            <p className="text-muted-foreground mb-8 text-base leading-relaxed md:text-lg">
+              XPharm typically assumes direct accountability across the following areas:
+            </p>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-primary mb-2 text-xl font-semibold">
+                  Global Supply Chain & Manufacturing
+                </h3>
+                <p className="text-muted-foreground text-base leading-relaxed md:text-lg">
+                  Design, stabilisation, and scale‑up of multi‑site, multi‑vendor supply chains supporting clinical and commercial programmes.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-primary mb-2 text-xl font-semibold">
+                  Supplier Selection, Escalation & Commercial Negotiation
+                </h3>
+                <p className="text-muted-foreground text-base leading-relaxed md:text-lg">
+                  Critical supplier selection, executive‑level escalation, and negotiation under time, cost, or performance pressure.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-primary mb-2 text-xl font-semibold">
+                  Trade Compliance & Cross‑Border Operations
+                </h3>
+                <p className="text-muted-foreground text-base leading-relaxed md:text-lg">
+                  Establishment and governance of compliant global trade, logistics, and import/export frameworks.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-primary mb-2 text-xl font-semibold">
+                  Global Operations Build‑Out
+                </h3>
+                <p className="text-muted-foreground text-base leading-relaxed md:text-lg">
+                  Design of operating models, organisational structures, and governance to support international expansion.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-primary mb-2 text-xl font-semibold">
+                  M&A Integration, Separation & Carve‑Outs
+                </h3>
+                <p className="text-muted-foreground text-base leading-relaxed md:text-lg">
+                  Operational integration, divestment planning, and execution following acquisitions or portfolio restructuring.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-primary mb-2 text-xl font-semibold">
+                  Operational Due Diligence
+                </h3>
+                <p className="text-muted-foreground text-base leading-relaxed md:text-lg">
+                  Assessment of operational risk, scalability, and execution readiness in pre‑ and post‑transaction contexts.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Who We Work With Section */}
+        <section id="who-we-work-with" className="border-border border-t bg-muted/30 px-6 py-16 md:px-12 lg:px-20 lg:py-24">
+          <div className="mx-auto max-w-4xl">
+            <h2
+              className={`text-primary mb-6 text-3xl font-bold md:text-4xl lg:text-5xl ${playfair.className}`}
+            >
+              Who We Work With
+            </h2>
+            <ul className="text-muted-foreground mb-8 space-y-4 text-base leading-relaxed md:text-lg">
+              <li className="flex gap-3">
+                <span className="text-accent mt-1 shrink-0">•</span>
+                <span>Private equity and venture capital investors</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-accent mt-1 shrink-0">•</span>
+                <span>Biotech companies from clinical stage through commercial scale‑up</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-accent mt-1 shrink-0">•</span>
+                <span>Pharmaceutical companies managing complex global operations</span>
+              </li>
+            </ul>
+            <p className="text-muted-foreground text-base leading-relaxed md:text-lg">
+              Engagements are limited to a small number of clients at any one time to ensure focus and delivery.
+            </p>
+          </div>
+        </section>
+
+        {/* When XPharm Is Not the Right Fit Section */}
+        <section id="not-right-fit" className="border-border border-t px-6 py-16 md:px-12 lg:px-20 lg:py-24">
+          <div className="mx-auto max-w-4xl">
+            <h2
+              className={`text-primary mb-6 text-3xl font-bold md:text-4xl lg:text-5xl ${playfair.className}`}
+            >
+              When XPharm Is Not the Right Fit
+            </h2>
+            <p className="text-muted-foreground mb-8 text-base leading-relaxed md:text-lg">
+              XPharm is deliberately selective. We are not the right partner in the following situations:
+            </p>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-primary mb-2 text-xl font-semibold">
+                  You are looking for advisory recommendations rather than execution.
+                </h3>
+                <p className="text-muted-foreground text-base leading-relaxed md:text-lg">
+                  XPharm does not produce strategy decks or diagnostic reports without ownership of delivery.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-primary mb-2 text-xl font-semibold">
+                  You need functional specialists rather than senior leadership.
+                </h3>
+                <p className="text-muted-foreground text-base leading-relaxed md:text-lg">
+                  We do not act as clinical, regulatory, quality, or CMC subject‑matter experts, nor do we replace functional teams.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-primary mb-2 text-xl font-semibold">
+                  You are seeking long‑term organisational headcount.
+                </h3>
+                <p className="text-muted-foreground text-base leading-relaxed md:text-lg">
+                  XPharm is designed for time‑bound mandates. If the priority is a permanent executive hire, we may support the transition but are not a substitute for it.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-primary mb-2 text-xl font-semibold">
+                  The primary objective is cost reduction rather than risk management or value creation.
+                </h3>
+                <p className="text-muted-foreground text-base leading-relaxed md:text-lg">
+                  Our work is focused on preventing failure, delay, and mis‑execution at critical moments.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-primary mb-2 text-xl font-semibold">
+                  The organisation is not ready to delegate authority.
+                </h3>
+                <p className="text-muted-foreground text-base leading-relaxed md:text-lg">
+                  Successful engagements require executive‑level decision rights and accountability.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* About XPharm Section */}
+        <section id="about" className="border-border border-t bg-muted/30 px-6 py-16 md:px-12 lg:px-20 lg:py-24">
+          <div className="mx-auto max-w-4xl">
+            <h2
+              className={`text-primary mb-6 text-3xl font-bold md:text-4xl lg:text-5xl ${playfair.className}`}
+            >
+              About XPharm
+            </h2>
+            <p className="text-muted-foreground text-base leading-relaxed md:text-lg">
+              XPharm was established to address a gap between advisory insight and executive accountability in life sciences operations. We bring hands‑on leadership experience across supply chain, global operations, and transaction‑driven change, stepping in when outcomes—not recommendations—are required.
+            </p>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section id="contact" className="border-border border-t px-6 py-16 md:px-12 lg:px-20 lg:py-24">
+          <div className="mx-auto max-w-4xl">
+            <h2
+              className={`text-primary mb-6 text-3xl font-bold md:text-4xl lg:text-5xl ${playfair.className}`}
+            >
+              Contact
+            </h2>
+            <p className="text-muted-foreground mb-6 text-base leading-relaxed md:text-lg">
+              For confidential discussion regarding fractional or interim engagement:
+            </p>
+            <ContactForm />
+            <p className="text-muted-foreground mt-6 text-base md:text-lg">
+              <span className="text-primary font-medium">Location:</span> Ireland | Global Mandates
+            </p>
+          </div>
+        </section>
       </main>
 
       {/* Footer */}
