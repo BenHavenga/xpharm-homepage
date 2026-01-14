@@ -1,43 +1,42 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { ArrowRight } from "lucide-react"
-import { createClient } from "@/lib/supabase"
+import type React from "react";
+import { useState } from "react";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
+import { Label } from "./ui/label";
+import { ArrowRight } from "lucide-react";
 
 export function ContactForm() {
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
 
-    const formData = new FormData(e.currentTarget)
-    const supabase = createClient()
+    const formData = new FormData(e.currentTarget);
+    formData.append("access_key", "104b8572-7851-4be6-a56d-d394a8a69a0d");
 
     try {
-      const { error } = await supabase.from("contact_submissions").insert({
-        name: formData.get("name") as string,
-        email: formData.get("email") as string,
-        company: (formData.get("company") as string) || null,
-        message: formData.get("message") as string,
-      })
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
 
-      if (error) {
-        throw error
+      const data = await response.json();
+
+      if (data.success) {
+        setIsSubmitted(true);
+      } else {
+        throw new Error(data.message || "Form submission failed");
       }
-
-      setIsSubmitted(true)
     } catch (error) {
-      console.error("Contact form submission error:", error)
-      alert("Failed to send message. Please try again or email us directly at contact@xpharm.ie")
+      console.error("Contact form submission error:", error);
+      alert("Failed to send message. Please try again.");
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
   }
 
@@ -45,18 +44,36 @@ export function ContactForm() {
     return (
       <div className="bg-primary-foreground rounded-2xl p-10 text-center">
         <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-6">
-          <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+          <svg
+            className="w-8 h-8 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={3}
+              d="M5 13l4 4L19 7"
+            />
           </svg>
         </div>
-        <h3 className="text-2xl font-semibold text-primary mb-3 font-serif">Got it.</h3>
-        <p className="text-muted-foreground text-lg">We'll be in touch shortly.</p>
+        <h3 className="text-2xl font-semibold text-primary mb-3 font-serif">
+          Got it.
+        </h3>
+        <p className="text-muted-foreground text-lg">
+          We'll be in touch shortly.
+        </p>
       </div>
-    )
+    );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-primary-foreground rounded-2xl p-8 md:p-10 text-left space-y-6">
+    <form
+      onSubmit={handleSubmit}
+      className="bg-primary-foreground rounded-2xl p-8 md:p-10 text-left space-y-6"
+    >
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div className="space-y-2">
           <Label htmlFor="name" className="text-primary font-medium">
@@ -86,7 +103,8 @@ export function ContactForm() {
       </div>
       <div className="space-y-2">
         <Label htmlFor="company" className="text-primary font-medium">
-          Company <span className="text-muted-foreground font-normal">(optional)</span>
+          Company{" "}
+          <span className="text-muted-foreground font-normal">(optional)</span>
         </Label>
         <Input
           id="company"
@@ -123,5 +141,5 @@ export function ContactForm() {
         )}
       </Button>
     </form>
-  )
+  );
 }
