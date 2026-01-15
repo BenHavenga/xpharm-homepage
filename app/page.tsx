@@ -1,6 +1,7 @@
 import { Inter, Playfair_Display } from "next/font/google";
 import Image from "next/image";
 import { SectionNav } from "./components/section-nav";
+import { ContactForm } from "./components/contact-form";
 
 const inter = Inter({ subsets: ["latin"] });
 const playfair = Playfair_Display({ subsets: ["latin"] });
@@ -322,20 +323,10 @@ export default function HomePage() {
             <p className="text-muted-foreground mb-6 text-base leading-relaxed md:text-lg">
               For confidential discussion regarding fractional or interim engagement:
             </p>
-            <div className="text-muted-foreground space-y-2 text-base md:text-lg">
-              <p>
-                <span className="text-primary font-medium">Email:</span>{" "}
-                <a
-                  href="mailto:info@xpharm.com"
-                  className="text-accent hover:text-primary transition-colors underline"
-                >
-                  info@xpharm.com
-                </a>
-              </p>
-              <p>
-                <span className="text-primary font-medium">Location:</span> Ireland | Global Mandates
-              </p>
-            </div>
+            <ContactForm />
+            <p className="text-muted-foreground mt-6 text-base md:text-lg">
+              <span className="text-primary font-medium">Location:</span> Ireland | Global Mandates
+            </p>
           </div>
         </section>
       </main>
