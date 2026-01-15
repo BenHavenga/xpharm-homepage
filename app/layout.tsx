@@ -11,20 +11,32 @@ const siteUrl = "https://xpharm.ie";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "XPharm | Cross-Functional Pharma Consultancy",
+    default: "XPharm | Fractional & Interim Operations Leadership for Life Sciences",
     template: "%s | XPharm",
   },
   description:
-    "XPharm is a cross-functional pharma operations consultancy solving complex CMC, Quality, Supply Chain, Serialization, and Compliance challenges for growing biopharma teams.",
+    "Fractional and interim operations leadership for life sciences companies. We provide executive operations leadership to boards, investors, and biotech companies when operational delivery is critical to enterprise value. Focused on execution, not advisory.",
   keywords: [
-    "pharmaceutical consultancy",
-    "pharma operations",
-    "CMC consultancy",
-    "quality assurance pharma",
-    "supply chain pharma",
-    "serialization compliance",
-    "GMP compliance",
-    "biotech consultancy",
+    "fractional COO",
+    "interim COO",
+    "operations leadership",
+    "life sciences operations",
+    "biotech operations",
+    "pharmaceutical operations",
+    "fractional operations leader",
+    "interim operations leader",
+    "operations executive",
+    "supply chain operations",
+    "global operations",
+    "M&A integration",
+    "operational due diligence",
+    "venture capital operations",
+    "private equity operations",
+    "biotech consulting",
+    "pharma consulting",
+    "executive operations",
+    "operations management",
+    "operational risk management",
   ],
   authors: [{ name: "XPharm" }],
   creator: "XPharm",
@@ -38,9 +50,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IE",
     url: siteUrl,
-    title: "XPharm | Cross-Functional Pharma Consultancy",
+    title: "XPharm | Fractional & Interim Operations Leadership for Life Sciences",
     description:
-      "Solving complex CMC, Quality, Supply Chain, Serialization, and Compliance challenges for growing biopharma teams.",
+      "Driving operational and value-creation milestones at critical inflection points. Fractional and interim operations leadership for life sciences companies navigating complex transitions and execution risk.",
     siteName: "XPharm",
     images: [
       {
@@ -53,9 +65,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "XPharm | Cross-Functional Pharma Consultancy",
+    title: "XPharm | Fractional & Interim Operations Leadership for Life Sciences",
     description:
-      "Solving complex CMC, Quality, Supply Chain, Serialization, and Compliance challenges for growing biopharma teams.",
+      "Driving operational and value-creation milestones at critical inflection points. Fractional and interim operations leadership for life sciences companies.",
     images: ["/favicon/android-chrome-512x512.png"],
   },
   icons: {
