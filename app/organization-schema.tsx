@@ -3,8 +3,9 @@ export function OrganizationSchema() {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "XPharm",
-    "alternateName": "XPharm Pharmaceutical Consultancy",
-    "description": "Cross-functional pharmaceutical operations consultancy specializing in CMC, Quality, Supply Chain, Serialization, and Compliance.",
+    "alternateName": "XPharm Fractional Pharma Executives",
+    "description":
+      "XPharm provides fractional and interim pharmaceutical operations leadership, supporting life sciences companies with hands-on execution across supply chain, manufacturing, external partnerships, trade compliance, and operational scale-up during periods of growth, transition, or complexity.",
     "url": "https://xpharm.ie",
     "logo": "https://xpharm.ie/images/Logo1.png",
     "address": {
@@ -24,12 +25,12 @@ export function OrganizationSchema() {
       "name": "Global"
     },
     "serviceType": [
-      "Pharmaceutical Consultancy",
-      "CMC Technical Operations",
-      "Quality Assurance",
-      "Supply Chain Management",
-      "Serialization Compliance",
-      "Trade Compliance"
+      "Fractional Operations Leadership",
+      "Interim COO / Head of Operations",
+      "Pharmaceutical Supply Chain Execution",
+      "Manufacturing & External Network Management",
+      "Trade Compliance & International Operations",
+      "Operational Scale-Up and Transition Support"
     ]
   };
 
