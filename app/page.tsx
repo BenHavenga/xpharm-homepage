@@ -77,6 +77,7 @@ export default function HomePage() {
       {/* Header */}
       <header className="sticky top-0 z-50 w-full bg-background px-6 py-6 md:px-12 lg:px-20">
         <div className="mx-auto max-w-7xl">
+          <meta name="google-site-verification" content="8dNyYFME2A_uppo8kUapXeaLTCWzkfaYMvNoKQ4tw0Y" />
           <Image
             src="/images/Logo1.png"
             alt="XPharm logo"
