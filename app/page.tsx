@@ -2,9 +2,74 @@ import { Inter, Playfair_Display } from "next/font/google";
 import Image from "next/image";
 import { SectionNav } from "./components/section-nav";
 import { ContactForm } from "./components/contact-form";
+import type { Metadata } from "next";
 
 const inter = Inter({ subsets: ["latin"] });
 const playfair = Playfair_Display({ subsets: ["latin"] });
+
+// ============================================================
+// METADATA EXPORT - This tells Google what to show in search results
+// ============================================================
+export const metadata: Metadata = {
+  // This is the page title that appears in the browser tab and Google search
+  title: "XPharm | Fractional & Interim Operations Leadership for Life Sciences",
+  
+  // This is the description that appears under your link in Google search results
+  description: "XPharm provides fractional and interim operations leadership to life sciences companies. Executive-level supply chain, manufacturing, and global operations support during critical transitions.",
+  
+  // Keywords help Google understand what your site is about
+  keywords: [
+    "fractional COO",
+    "interim operations leader",
+    "life sciences operations",
+    "pharmaceutical supply chain",
+    "biotech operations",
+    "interim COO pharma",
+    "fractional operations executive",
+    "pharma operations consulting",
+  ],
+  
+  // These help with social media sharing
+  openGraph: {
+    title: "XPharm | Fractional & Interim Operations Leadership for Life Sciences",
+    description: "Executive operations leadership for life sciences companies navigating complex transitions and execution risk.",
+    url: "https://xpharm.ie",
+    siteName: "XPharm",
+    locale: "en_IE",
+    type: "website",
+    images: [
+      {
+        url: "https://xpharm.ie/images/Logo1.png",
+        width: 1200,
+        height: 630,
+        alt: "XPharm Logo",
+      },
+    ],
+  },
+  
+  // Twitter card metadata
+  twitter: {
+    card: "summary_large_image",
+    title: "XPharm | Fractional & Interim Operations Leadership for Life Sciences",
+    description: "Executive operations leadership for life sciences companies navigating complex transitions and execution risk.",
+    images: ["https://xpharm.ie/images/Logo1.png"],
+  },
+  
+  // Tell Google this content is in English
+  alternates: {
+    canonical: "https://xpharm.ie",
+  },
+  
+  // Other meta tags
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+};
 
 export default function HomePage() {
   return (
