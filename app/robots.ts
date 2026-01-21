@@ -16,7 +16,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*', // Applies to all search engines
         allow: '/', // Allow crawling of all pages
-        disallow: ['/api/', '/private/'], // Block these paths (if you had any)
+        disallow: [], // No blocked paths
       },
     ],
     sitemap: 'https://xpharm.ie/sitemap.xml', // Tell Google where your sitemap is
