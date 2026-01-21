@@ -1,9 +1,4 @@
-# *
 User-agent: *
 Allow: /
 
-# Host
-Host: https://xpharm.ie
-
-# Sitemaps
 Sitemap: https://xpharm.ie/sitemap.xml
