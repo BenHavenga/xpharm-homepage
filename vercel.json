@@ -1,0 +1,19 @@
+{
+    "redirects": [
+      {
+        "source": "https://www.xpharm.ie/:path*",
+        "destination": "https://xpharm.ie/:path*",
+        "permanent": true
+      },
+      {
+        "source": "http://www.xpharm.ie/:path*",
+        "destination": "https://xpharm.ie/:path*",
+        "permanent": true
+      },
+      {
+        "source": "http://xpharm.ie/:path*",
+        "destination": "https://xpharm.ie/:path*",
+        "permanent": true
+      }
+    ]
+  }
