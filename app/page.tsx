@@ -15,11 +15,11 @@ export const metadata: Metadata = {
   title: "XPharm | Fractional & Interim Operations Leadership for Life Sciences",
   
   // This is the description that appears under your link in Google search results
-  description: "XPharm provides fractional and interim operations leadership to life sciences companies. Executive-level supply chain, manufacturing, and global operations support during critical transitions.",
+  description: "Executive operations leadership for life sciences. Fractional and interim COO services for biotech, pharma, and investors during critical transitions.",
   
   // Keywords help Google understand what your site is about
   keywords: [
-    "fractional COO",
+    "fractional COO pharma",
     "interim operations leader",
     "life sciences operations",
     "pharmaceutical supply chain",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   // These help with social media sharing
   openGraph: {
     title: "XPharm | Fractional & Interim Operations Leadership for Life Sciences",
-    description: "Executive operations leadership for life sciences companies navigating complex transitions and execution risk.",
+    description: "Fractional executive operations leadership for life sciences companies navigating complex transitions and execution risk.",
     url: "https://xpharm.ie",
     siteName: "XPharm",
     locale: "en_IE",

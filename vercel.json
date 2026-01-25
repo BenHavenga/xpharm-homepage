@@ -1,0 +1,15 @@
+{
+    "redirects": [
+      {
+        "source": "/:path*",
+        "has": [
+          {
+            "type": "host",
+            "value": "www.xpharm.ie"
+          }
+        ],
+        "destination": "https://xpharm.ie/:path*",
+        "permanent": true
+      }
+    ]
+  }
