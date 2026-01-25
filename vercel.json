@@ -1,17 +1,13 @@
 {
     "redirects": [
       {
-        "source": "https://www.xpharm.ie/:path*",
-        "destination": "https://xpharm.ie/:path*",
-        "permanent": true
-      },
-      {
-        "source": "http://www.xpharm.ie/:path*",
-        "destination": "https://xpharm.ie/:path*",
-        "permanent": true
-      },
-      {
-        "source": "http://xpharm.ie/:path*",
+        "source": "/:path*",
+        "has": [
+          {
+            "type": "host",
+            "value": "www.xpharm.ie"
+          }
+        ],
         "destination": "https://xpharm.ie/:path*",
         "permanent": true
       }
